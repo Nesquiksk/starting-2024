@@ -1,22 +1,13 @@
-<<<<<<< HEAD
-=======
-
->>>>>>> 03fc1eca8a8cb7ed923428143d4dc6f42e12a175
 // src\app\api\auth\[...nextauth]\authOptions.ts
 
 import { NextAuthOptions } from "next-auth";
 import GoogleProvider from "next-auth/providers/google";
-
-<<<<<<< HEAD
-export const authOptions: NextAuthOptions = {
-
-    providers: [
-=======
+import { PrismaAdapter } from "@auth/prisma-adapter"
+import { prisma } from "./prisma"
 
 export const authOptions: NextAuthOptions = {
-  
+  adapter: PrismaAdapter(prisma),
   providers: [
->>>>>>> 03fc1eca8a8cb7ed923428143d4dc6f42e12a175
     GoogleProvider({
       clientId: process.env.GOOGLE_CLIENT_ID || "",
       clientSecret: process.env.GOOGLE_CLIENT_SECRET || "",
@@ -34,9 +25,3 @@ export const authOptions: NextAuthOptions = {
     },
   },
 };
-<<<<<<< HEAD
-=======
-
-
-
->>>>>>> 03fc1eca8a8cb7ed923428143d4dc6f42e12a175
