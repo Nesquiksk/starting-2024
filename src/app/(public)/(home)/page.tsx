@@ -11,3 +11,5 @@ export default async function HomePage() {
   const session = await getServerSession(authOptions);
   return session ? <AuthHomeView session={session} /> : <NonAuthHomeView />;
 }
+
+
